@@ -1,0 +1,344 @@
+
+{% extends "base.html" %}
+
+{% block title %}
+    {{ project.title }} | Portfolio
+{% endblock %}
+
+{% block content %}
+
+<section class="project-detail">
+
+    <a href="{% url 'main:projects' %}" class="back-projects">
+        ← Back to projects
+    </a>
+
+    <!-- HEADER -->
+    <div class="detail-header">
+
+        <span class="section-label">
+            PROJECT
+        </span>
+
+        <h1>
+            {{ project.title }}
+        </h1>
+
+        <p>
+            {{ project.description }}
+        </p>
+
+    </div>
+
+
+    <!-- PROJECT -->
+    <div class="detail-layout">
+
+        <!-- PREVIEW -->
+        <div class="detail-preview">
+
+            {% if project.image %}
+
+                <img
+                    src="{{ project.image.url }}"
+                    alt="{{ project.title }}"
+                >
+
+            {% else %}
+
+                <div class="detail-placeholder">
+
+                    <span>
+                        {{ project.category|upper }}
+                    </span>
+
+                </div>
+
+            {% endif %}
+
+        </div>
+
+
+        <!-- SIDEBAR -->
+        <aside class="detail-sidebar">
+
+            <div class="detail-box">
+
+                <span>CATEGORY</span>
+
+                <strong>
+                    {{ project.get_category_display }}
+                </strong>
+
+            </div>
+
+
+            <div class="detail-box">
+
+                <span>TYPE</span>
+
+                <strong>
+                    {{ project.get_project_type_display }}
+                </strong>
+
+            </div>
+
+
+            <div class="detail-box">
+
+                <span>TECHNOLOGIES</span>
+
+                <strong>
+                    {{ project.technologies }}
+                </strong>
+
+            </div>
+
+
+            <div class="detail-box">
+
+                <span>CREATED</span>
+
+                <strong>
+                    {{ project.created_at|date:"F Y" }}
+                </strong>
+
+            </div>
+
+
+            <!-- BUTTONS -->
+            <div class="detail-buttons">
+
+                {% if project.demo_url %}
+
+                <a
+                    href="{{ project.demo_url }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn primary"
+                >
+                    Live Demo ↗
+                </a>
+
+                {% endif %}
+
+
+                {% if project.github_url %}
+
+                <a
+                    href="{{ project.github_url }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn secondary"
+                >
+                    View Source ↗
+                </a>
+
+                {% endif %}
+
+            </div>
+
+        </aside>
+
+    </div>
+
+
+    <!-- INTERACTIVE -->
+    {% if project.is_interactive %}
+
+    <section class="interactive-project">
+
+        <div class="interactive-content">
+
+            <span class="section-label">
+                INTERACTIVE
+            </span>
+
+            <h2>
+                Try the project.
+            </h2>
+
+            <p>
+                Don't just look at the project.
+                Open the live version and interact with it
+                directly from this portfolio.
+            </p>
+
+        </div>
+
+
+        <button
+            class="run-project"
+            id="runProject"
+            type="button"
+        >
+            <span>▶</span>
+            Run Project
+        </button>
+
+    </section>
+
+    {% endif %}
+
+</section>
+
+
+<!-- ================= RUNNER ================= -->
+
+{% if project.is_interactive %}
+
+<div
+    class="runner-overlay"
+    id="runnerOverlay"
+>
+
+    <div
+        class="runner-window"
+        role="dialog"
+        aria-modal="true"
+    >
+
+        <!-- HEADER -->
+
+        <div class="runner-header">
+
+            <div class="runner-header-left">
+
+                <span class="runner-status"></span>
+
+                <span>
+                    LIVE PROJECT
+                </span>
+
+            </div>
+
+
+            <button
+                id="closeRunner"
+                class="runner-close"
+                type="button"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- TOOLBAR -->
+
+        <div class="runner-toolbar">
+
+            <div class="runner-project-name">
+
+                <span>
+                    ~/projects/
+                </span>
+
+                <strong>
+                    {{ project.title }}
+                </strong>
+
+            </div>
+
+
+            <div class="runner-tools">
+
+                <button
+                    id="reloadProject"
+                    type="button"
+                >
+                    ↻ Reload
+                </button>
+
+
+                <button
+                    id="fullscreenProject"
+                    type="button"
+                >
+                    ⛶ Fullscreen
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- SCREEN -->
+
+        <div class="runner-screen">
+
+            <div
+                class="runner-loading"
+                id="runnerLoading"
+            >
+
+                <div class="loading-spinner"></div>
+
+                <span>
+                    Starting environment...
+                </span>
+
+            </div>
+
+
+            {% if project.demo_url %}
+
+            <iframe
+                id="projectFrame"
+                src=""
+                data-src="{{ project.demo_url }}"
+                title="{{ project.title }} live demo"
+                loading="lazy"
+                allowfullscreen
+            ></iframe>
+
+            {% else %}
+
+            <div class="runner-empty">
+
+                <div class="runner-empty-icon">
+                    &lt;/&gt;
+                </div>
+
+                <h2>
+                    Demo unavailable
+                </h2>
+
+                <p>
+                    Add a Demo URL from Django Admin
+                    to make this project interactive.
+                </p>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+
+        <!-- FOOTER -->
+
+        <div class="runner-footer">
+
+            <div>
+
+                <span class="runner-status"></span>
+
+                Environment online
+
+            </div>
+
+            <span>
+                {{ project.get_project_type_display }}
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endif %}
+
+{% endblock %}
+

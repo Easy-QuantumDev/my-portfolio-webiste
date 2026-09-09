@@ -1,0 +1,193 @@
+{% extends "base.html" %}
+
+{% block title %}
+Projects | Portfolio
+{% endblock %}
+
+
+{% block content %}
+
+<section class="projects-page">
+
+    <div class="projects-hero">
+
+        <span class="section-label">
+            MY WORK
+        </span>
+
+        <h1>
+            Selected
+            <span>Projects.</span>
+        </h1>
+
+        <p>
+            A collection of things I've built,
+            experimented with and learned from.
+        </p>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <form method="GET" class="project-search">
+
+        <div class="search-box">
+
+            <span>⌕</span>
+
+            <input type="text" name="search" placeholder="Search projects..." value="{{ search }}">
+
+        </div>
+
+        <button type="submit">
+            Search
+        </button>
+
+    </form>
+
+
+    <!-- FILTER -->
+
+    <div class="project-filters">
+
+        <a href="?category=all" class="{% if current_category == 'all' %}active{% endif %}">
+            All
+        </a>
+
+        <a href="?category=frontend" class="{% if current_category == 'frontend' %}active{% endif %}">
+            Frontend
+        </a>
+
+        <a href="?category=backend" class="{% if current_category == 'backend' %}active{% endif %}">
+            Backend
+        </a>
+
+        <a href="?category=fullstack" class="{% if current_category == 'fullstack' %}active{% endif %}">
+            Full Stack
+        </a>
+
+        <a href="?category=python" class="{% if current_category == 'python' %}active{% endif %}">
+            Python
+        </a>
+
+        <a href="?category=security" class="{% if current_category == 'security' %}active{% endif %}">
+            Security
+        </a>
+
+    </div>
+
+
+    <!-- PROJECTS -->
+
+    <div class="all-projects">
+
+        {% for project in projects %}
+
+        <article class="big-project-card">
+
+            <div class="big-project-image">
+
+                {% if project.image %}
+
+                <img src="{{ project.image.url }}" alt="{{ project.title }}">
+
+                {% else %}
+
+                <div class="project-placeholder">
+
+                    <span>
+                        {{ project.category|upper }}
+                    </span>
+
+                </div>
+
+                {% endif %}
+
+
+                <div class="project-index">
+
+                    0{{ forloop.counter }}
+
+                </div>
+
+            </div>
+
+
+            <div class="big-project-content">
+
+                <div class="project-meta">
+
+                    <span>
+                        {{ project.category }}
+                    </span>
+
+                    <span>
+                        {{ project.created_at|date:"Y" }}
+                    </span>
+
+                </div>
+
+
+                <h2>
+                    {{ project.title }}
+                </h2>
+
+
+                <p>
+                    {{ project.description }}
+                </p>
+
+                <div class="project-tech">
+                    {% for tech in project.tech_list %}
+                    <span>{{ tech }}</span>
+                    {% endfor %}
+                </div>
+
+
+                <div class="big-project-actions">
+
+                    <a href="{% url 'main:project_detail' project.slug %}" class="project-view">
+                        View Project
+                        <span>↗</span>
+                    </a>
+
+                    {% if project.github_url %}
+
+                    <a href="{{ project.github_url }}" target="_blank" class="github-link">
+                        GitHub ↗
+                    </a>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </article>
+
+        {% empty %}
+
+        <div class="empty-projects">
+
+            <div>
+                ∅
+            </div>
+
+            <h2>
+                No projects found
+            </h2>
+
+            <p>
+                Try another search or category.
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

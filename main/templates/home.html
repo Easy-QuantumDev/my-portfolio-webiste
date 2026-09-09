@@ -1,0 +1,1152 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Portfolio | Developer
+{% endblock %}
+
+
+{% block content %}
+
+<main class="home-page">
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="availability">
+
+                <span></span>
+
+                AVAILABLE FOR WORK
+
+            </div>
+
+
+            <h1>
+
+                Building
+                <span>Digital</span>
+                Experiences.
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                Python & Django developer focused on building
+                modern web applications, APIs and interactive
+                digital experiences.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="{% url 'main:projects' %}"
+                    class="btn primary"
+                >
+                    View Projects
+                    <span>↗</span>
+                </a>
+
+
+                <a
+                    href="{% url 'main:contact' %}"
+                    class="btn secondary"
+                >
+                    Contact Me
+                </a>
+
+            </div>
+
+
+            <!-- TECHNOLOGIES -->
+
+            <div class="hero-tech">
+
+                <span>PYTHON</span>
+                <span>DJANGO</span>
+                <span>FASTAPI</span>
+                <span>JAVASCRIPT</span>
+                <span>POSTGRESQL</span>
+                <span>DOCKER</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             TERMINAL
+        ================================================== -->
+
+        <div class="terminal-card">
+
+            <div class="terminal-header">
+
+                <div class="terminal-dots">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+                <span>
+                    developer.py
+                </span>
+
+            </div>
+
+
+            <div class="terminal-body">
+
+
+                <div>
+
+                    <span class="terminal-green">
+                        $
+                    </span>
+
+                    whoami
+
+                </div>
+
+
+                <div class="terminal-output">
+
+                    developer
+
+                </div>
+
+
+                <div>
+
+                    <span class="terminal-green">
+                        $
+                    </span>
+
+                    python portfolio.py
+
+                </div>
+
+
+                <div class="terminal-output">
+
+                    Initializing portfolio...
+
+                    <br>
+
+                    Loading projects...
+
+                    <br>
+
+                    Backend online ✓
+
+                    <br>
+
+                    Database connected ✓
+
+                    <br>
+
+                    System ready ✓
+
+                </div>
+
+
+                <div>
+
+                    <span class="terminal-green">
+                        $
+                    </span>
+
+                    <span class="terminal-cursor">
+                        █
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         QUICK STATS
+    ====================================================== -->
+
+    <section class="stats-section">
+
+        <div class="stats-header">
+
+            <span class="section-label">
+                QUICK OVERVIEW
+            </span>
+
+            <p>
+                A few numbers about my work.
+            </p>
+
+        </div>
+
+
+        <div class="stats">
+
+            <div class="stat-card">
+
+                <span class="stat-number">
+                    15+
+                </span>
+
+                <span class="stat-label">
+                    Projects
+                </span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span class="stat-number">
+                    7+
+                </span>
+
+                <span class="stat-label">
+                    Technologies
+                </span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span class="stat-number">
+                    100%
+                </span>
+
+                <span class="stat-label">
+                    Learning
+                </span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span class="stat-number">
+                    ∞
+                </span>
+
+                <span class="stat-label">
+                    Ideas
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+<!-- =====================================================
+     SKILLS
+====================================================== -->
+
+<section class="skills-section">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-label">
+                MY TOOLKIT
+            </span>
+
+            <h2>
+                Skills &
+                <span>Technologies.</span>
+            </h2>
+
+        </div>
+
+        <p class="skills-heading-text">
+            Technologies I use to build
+            modern and scalable applications.
+        </p>
+
+    </div>
+
+
+    <div class="skills-grid">
+
+
+        <!-- PYTHON -->
+
+        <article class="skill-card skill-featured">
+
+            <div class="skill-top">
+
+                <div class="skill-icon">
+                    PY
+                </div>
+
+                <span class="skill-number">
+                    01
+                </span>
+
+            </div>
+
+
+            <h3>
+                Python
+            </h3>
+
+
+            <p>
+                Backend development, automation,
+                APIs and application logic.
+            </p>
+
+
+            <div class="skill-level">
+
+                <div class="skill-level-info">
+
+                    <span>
+                        Experience
+                    </span>
+
+                    <span>
+                        Advanced
+                    </span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <span style="width: 90%;"></span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- DJANGO -->
+
+        <article class="skill-card">
+
+            <div class="skill-top">
+
+                <div class="skill-icon">
+                    DJ
+                </div>
+
+                <span class="skill-number">
+                    02
+                </span>
+
+            </div>
+
+
+            <h3>
+                Django
+            </h3>
+
+
+            <p>
+                Full-stack web applications,
+                authentication and database systems.
+            </p>
+
+
+            <div class="skill-level">
+
+                <div class="skill-level-info">
+
+                    <span>
+                        Experience
+                    </span>
+
+                    <span>
+                        Advanced
+                    </span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <span style="width: 85%;"></span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- FASTAPI -->
+
+        <article class="skill-card">
+
+            <div class="skill-top">
+
+                <div class="skill-icon">
+                    API
+                </div>
+
+                <span class="skill-number">
+                    03
+                </span>
+
+            </div>
+
+
+            <h3>
+                FastAPI
+            </h3>
+
+
+            <p>
+                Fast and modern REST API
+                development with Python.
+            </p>
+
+
+            <div class="skill-level">
+
+                <div class="skill-level-info">
+
+                    <span>
+                        Experience
+                    </span>
+
+                    <span>
+                        Intermediate
+                    </span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <span style="width: 75%;"></span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- JAVASCRIPT -->
+
+        <article class="skill-card skill-wide">
+
+            <div class="skill-top">
+
+                <div class="skill-icon">
+                    JS
+                </div>
+
+                <span class="skill-number">
+                    04
+                </span>
+
+            </div>
+
+
+            <h3>
+                JavaScript
+            </h3>
+
+
+            <p>
+                Building interactive interfaces,
+                DOM manipulation, events and
+                browser-based applications.
+            </p>
+
+
+            <div class="skill-tags">
+
+                <span>ES6+</span>
+                <span>DOM</span>
+                <span>Events</span>
+                <span>LocalStorage</span>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- DATABASE -->
+
+        <article class="skill-card">
+
+            <div class="skill-top">
+
+                <div class="skill-icon">
+                    DB
+                </div>
+
+                <span class="skill-number">
+                    05
+                </span>
+
+            </div>
+
+
+            <h3>
+                PostgreSQL
+            </h3>
+
+
+            <p>
+                Relational databases, queries,
+                filtering and data management.
+            </p>
+
+
+            <div class="skill-tags">
+
+                <span>SQL</span>
+                <span>JOIN</span>
+                <span>GROUP BY</span>
+                <span>ORDER BY</span>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- DOCKER -->
+
+        <article class="skill-card">
+
+            <div class="skill-top">
+
+                <div class="skill-icon">
+                    DK
+                </div>
+
+                <span class="skill-number">
+                    06
+                </span>
+
+            </div>
+
+
+            <h3>
+                Docker
+            </h3>
+
+
+            <p>
+                Containerization and development
+                environment management.
+            </p>
+
+
+            <div class="skill-tags">
+
+                <span>Docker</span>
+                <span>Containers</span>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- GIT -->
+
+        <article class="skill-card">
+
+            <div class="skill-top">
+
+                <div class="skill-icon">
+                    GT
+                </div>
+
+                <span class="skill-number">
+                    07
+                </span>
+
+            </div>
+
+
+            <h3>
+                Git & GitHub
+            </h3>
+
+
+            <p>
+                Version control, repositories,
+                branches and project collaboration.
+            </p>
+
+
+            <div class="skill-tags">
+
+                <span>Git</span>
+                <span>GitHub</span>
+                <span>Branches</span>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- HTML CSS -->
+
+        <article class="skill-card">
+
+            <div class="skill-top">
+
+                <div class="skill-icon">
+                    &lt;/&gt;
+                </div>
+
+                <span class="skill-number">
+                    08
+                </span>
+
+            </div>
+
+
+            <h3>
+                HTML & CSS
+            </h3>
+
+
+            <p>
+                Responsive layouts, Flexbox,
+                animations and modern UI design.
+            </p>
+
+
+            <div class="skill-tags">
+
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>Flexbox</span>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+    <!-- =====================================================
+         BENTO
+    ====================================================== -->
+
+    <section class="bento-section">
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-label">
+                    WHAT I DO
+                </span>
+
+                <h2>
+                    Code is my
+                    <span>tool.</span>
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="bento-grid">
+
+
+            <!-- BACKEND -->
+
+            <div class="bento-card bento-large">
+
+                <span class="bento-number">
+                    01
+                </span>
+
+
+                <div class="bento-icon">
+                    PY
+                </div>
+
+
+                <h3>
+                    Backend Development
+                </h3>
+
+
+                <p>
+                    Building scalable web applications,
+                    authentication systems and backend
+                    logic using Python and Django.
+                </p>
+
+
+                <div class="bento-tags">
+
+                    <span>Python</span>
+                    <span>Django</span>
+                    <span>PostgreSQL</span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- API -->
+
+            <div class="bento-card">
+
+                <span class="bento-number">
+                    02
+                </span>
+
+
+                <div class="bento-icon">
+                    API
+                </div>
+
+
+                <h3>
+                    REST APIs
+                </h3>
+
+
+                <p>
+                    Designing and building APIs
+                    with FastAPI and Django.
+                </p>
+
+
+                <div class="bento-tags">
+
+                    <span>FastAPI</span>
+                    <span>REST</span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FRONTEND -->
+
+            <div class="bento-card">
+
+                <span class="bento-number">
+                    03
+                </span>
+
+
+                <div class="bento-icon">
+                    JS
+                </div>
+
+
+                <h3>
+                    Interactive UI
+                </h3>
+
+
+                <p>
+                    Creating responsive and interactive
+                    interfaces with JavaScript.
+                </p>
+
+
+                <div class="bento-tags">
+
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JS</span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DEVOPS -->
+
+            <div class="bento-card bento-wide">
+
+                <span class="bento-number">
+                    04
+                </span>
+
+
+                <div class="bento-icon">
+                    DK
+                </div>
+
+
+                <h3>
+                    Development Environment
+                </h3>
+
+
+                <p>
+                    Working with Git, GitHub and Docker
+                    to build, manage and deploy projects.
+                </p>
+
+
+                <div class="bento-tags">
+
+                    <span>Git</span>
+                    <span>GitHub</span>
+                    <span>Docker</span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FEATURED PROJECTS
+    ====================================================== -->
+
+    <section class="featured-section">
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-label">
+                    SELECTED WORK
+                </span>
+
+                <h2>
+                    Featured
+                    <span>Projects.</span>
+                </h2>
+
+            </div>
+
+
+            <a
+                href="{% url 'main:projects' %}"
+                class="view-all"
+            >
+                View all projects ↗
+            </a>
+
+        </div>
+
+
+
+        <div class="projects-grid">
+
+
+            {% for project in projects %}
+
+            <article class="project-card">
+
+
+                <!-- IMAGE -->
+
+                <div class="project-image">
+
+
+                    {% if project.image %}
+
+                    <img
+                        src="{{ project.image.url }}"
+                        alt="{{ project.title }}"
+                        loading="lazy"
+                    >
+
+                    {% else %}
+
+                    <div class="project-placeholder">
+
+                        <span>
+                            {{ project.category|upper }}
+                        </span>
+
+                    </div>
+
+                    {% endif %}
+
+
+                    <div class="project-number">
+
+                        0{{ forloop.counter }}
+
+                    </div>
+
+
+                    {% if project.is_interactive %}
+
+                    <div class="project-live">
+
+                        <span></span>
+
+                        LIVE
+
+                    </div>
+
+                    {% endif %}
+
+
+                </div>
+
+
+
+                <!-- CONTENT -->
+
+                <div class="project-content">
+
+
+                    <div class="project-tags">
+
+                        <span>
+                            {{ project.get_category_display }}
+                        </span>
+
+                        <span>
+                            {{ project.get_project_type_display }}
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        {{ project.title }}
+                    </h3>
+
+
+                    <p>
+                        {{ project.short_description }}
+                    </p>
+
+
+                    <div class="project-actions">
+
+
+                        <a
+                            href="{% url 'main:project_detail' project.slug %}"
+                        >
+                            View Project ↗
+                        </a>
+
+
+                        {% if project.github_url %}
+
+                        <a
+                            href="{{ project.github_url }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            GitHub ↗
+                        </a>
+
+                        {% endif %}
+
+
+                    </div>
+
+
+                </div>
+
+
+            </article>
+
+
+            {% empty %}
+
+
+            <div class="empty-projects">
+
+                <span>
+                    ∅
+                </span>
+
+                <h3>
+                    No featured projects yet.
+                </h3>
+
+                <p>
+                    Add projects from Django Admin
+                    and mark them as featured.
+                </p>
+
+            </div>
+
+
+            {% endfor %}
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         LAB
+    ====================================================== -->
+
+    <section class="lab-section">
+
+
+        <div class="lab-content">
+
+            <span class="section-label">
+                EXPERIMENTAL SPACE
+            </span>
+
+
+            <h2>
+
+                Welcome to my
+                <span>Lab.</span>
+
+            </h2>
+
+
+            <p>
+
+                Don't just look at my projects.
+                Run them, interact with them and
+                see how they work.
+
+            </p>
+
+
+            <a
+                href="{% url 'main:lab' %}"
+                class="btn primary"
+            >
+                Enter Lab
+                <span>↗</span>
+            </a>
+
+        </div>
+
+
+
+        <!-- LAB VISUAL -->
+
+        <div class="lab-visual">
+
+
+            <div class="lab-orbit orbit-one"></div>
+
+            <div class="lab-orbit orbit-two"></div>
+
+
+            <div class="lab-core">
+
+                &lt;/&gt;
+
+            </div>
+
+
+            <div class="lab-floating lab-python">
+                PY
+            </div>
+
+
+            <div class="lab-floating lab-api">
+                API
+            </div>
+
+
+            <div class="lab-floating lab-js">
+                JS
+            </div>
+
+
+            <div class="lab-floating lab-django">
+                DJ
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FINAL CTA
+    ====================================================== -->
+
+    <section class="home-cta">
+
+
+        <span class="section-label">
+            HAVE AN IDEA?
+        </span>
+
+
+        <h2>
+
+            Let's build
+            <span>something great.</span>
+
+        </h2>
+
+
+        <p>
+
+            I'm always interested in interesting
+            projects, collaborations and new challenges.
+
+        </p>
+
+
+        <a
+            href="{% url 'main:contact' %}"
+            class="btn primary"
+        >
+            Get in touch
+            <span>↗</span>
+        </a>
+
+
+    </section>
+
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+Lab | Portfolio
+{% endblock %}
+
+
+{% block content %}
+
+<section class="lab-page">
+
+    <div class="lab-hero">
+
+        <span class="section-label">
+            EXPERIMENTAL SPACE
+        </span>
+
+        <h1>
+            Welcome to
+            <span>my Lab.</span>
+        </h1>
+
+        <p>
+            Don't just look at my projects.
+            Run them, interact with them and
+            see how they work.
+        </p>
+
+    </div>
+
+
+    <div class="lab-terminal">
+
+        <div class="terminal-header">
+
+            <div class="terminal-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <span>
+                lab@portfolio:~
+            </span>
+
+        </div>
+
+
+        <div class="terminal-body">
+
+            <p>
+                <span class="terminal-green">$</span>
+                ./initialize_lab.sh
+            </p>
+
+            <p class="terminal-output">
+                Loading experiments...
+            </p>
+
+            <p class="terminal-output">
+                Interactive projects:
+                {{ projects|length }}
+            </p>
+
+            <p class="terminal-output">
+                Environment:
+                ONLINE ✓
+            </p>
+
+            <p>
+                <span class="terminal-green">$</span>
+                ready
+                <span class="terminal-cursor">█</span>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- PROJECTS -->
+
+    <div class="lab-projects">
+
+        {% for project in projects %}
+
+        <article class="lab-project-card">
+
+            <div class="lab-project-top">
+
+                <div class="lab-icon">
+
+                    {% if project.category == "javascript" %}
+                        JS
+                    {% elif project.category == "python" %}
+                        PY
+                    {% elif project.category == "django" %}
+                        DJ
+                    {% elif project.category == "fastapi" %}
+                        API
+                    {% else %}
+                        &lt;/&gt;
+                    {% endif %}
+
+                </div>
+
+
+                <span class="lab-type">
+
+                    {{ project.get_project_type_display }}
+
+                </span>
+
+            </div>
+
+
+            <h2>
+                {{ project.title }}
+            </h2>
+
+
+            <p>
+                {{ project.short_description }}
+            </p>
+
+
+            <div class="lab-tech">
+
+                {{ project.technologies }}
+
+            </div>
+
+
+            <div class="lab-card-footer">
+
+                <span>
+
+                    <i></i>
+
+                    Interactive
+
+                </span>
+
+
+                <a
+                    href="{% url 'main:project_detail' project.slug %}"
+                >
+
+                    Open Lab ↗
+
+                </a>
+
+            </div>
+
+        </article>
+
+        {% empty %}
+
+        <div class="empty-lab">
+
+            <span>
+                ∅
+            </span>
+
+            <h2>
+                No experiments yet
+            </h2>
+
+            <p>
+                Mark a project as interactive
+                from Django Admin.
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}
